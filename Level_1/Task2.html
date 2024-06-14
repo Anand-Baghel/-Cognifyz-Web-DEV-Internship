@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-1 Task 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+        .main{
+            margin: 41px 64px 153px 9px;
+    padding: 73px 82px 182px 21px;
+    border-radius: 0%;
+    border: 2px solid black;
+    width: 100%;
+    background-color: bisque;
+    justify-content: space-between;
+        }
+        .btn{
+            color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 12px;
+    margin: 24px;
+    border-radius: 21px;
+    font-size: 24px;
+    font-weight: 500;
+        }
+        .cal{
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            justify-content: center;
+            align-items: center;
+        }
+        .cal input{
+            height: 11%;
+    width: 49%;
+    padding: 13px;
+    border-radius: 21px;
+    border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1>Task 2</h1>
+    <center>
+        <h2>Click on button to change color</h2>
+    <!-- Button to changes colors -->
+    <button class="btn" onclick="changeColor(this)">Color Change</button>
+    </center>
+    <script>
+        // create a button to change the color
+        function changeColor(button){
+            button.style.backgroundColor = button.style.backgroundColor === 'red' ? 'blue' : 
+                               button.style.backgroundColor === 'blue' ? 'skyblue' : 
+                               button.style.backgroundColor === 'skyblue' ? 'green' :
+                               button.style.backgroundColor === 'green' ? '#007bff' : 'red';
+
+        }
+    </script>
+    <center>
+        <h2>Greeting</h2>
+    <!-- Greeting based on current time -->
+     <button class="btn" onclick="displayGreeting()">Alert</button>
+     </center>
+     <script>
+        function displayGreeting() {
+       var now = new Date();
+       var hours = now.getHours();
+       var greeting = hours < 12 ? "Good morning!" :
+                 hours < 18 ? "Good afternoon!" : "Good evening!";
+  alert(greeting);
+}
+window.onload = displayGreeting; // Display greeting when page loads
+     </script>
+  <!-- Basic calculator add two No -->
+<center><div class="cal">
+    <h1>Calculator to add number</h1>
+    <input type="number" id="num1" placeholder="Enter First Number">
+    <input type="number" id="num2" placeholder="Enter Second Number">
+    <button class="btn" onclick="addNumbers()">Submit</button>
+<p id="result"></p>
+</div>
+</center>
+<script>
+    // Function to add numbers
+function addNumbers() {
+  var num1 = document.getElementById('num1').value;
+  var num2 = document.getElementById('num2').value;
+  var sum = Number(num1) + Number(num2);
+  document.getElementById('result').textContent = 'RESULT: ' + sum;
+}
+</script>
+</div>
+</body>
+
+</html>
